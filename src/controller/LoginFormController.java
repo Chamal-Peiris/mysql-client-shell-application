@@ -46,7 +46,7 @@ public class LoginFormController {
 //                    txtUserName.getText(),
 //                    txtPassword.getText(),
 //                    txtPort.getText());
-//            String[] commands = {"mysql",
+//            String[] commands = {"mysql",           //usage of arrays
 //                    "-h", txtHost.getText(),
 //                    "-u", txtUserName.getText(),
 //                    "--port", txtPort.getText(),
@@ -54,12 +54,15 @@ public class LoginFormController {
 //                    "-e", "exit"};
 //            Process mysql = Runtime.getRuntime().exec(commands);
 
-            Process mysql = new ProcessBuilder("mysql",
+            Process mysql = new ProcessBuilder("mysql",    //usage of process builder is best
                     "-h", txtHost.getText(),
                     "-u", txtUsername.getText(),
                     "--port", txtPort.getText(),
-                    "-p" + txtPassword.getText(),
+                    "-p",
                     "-e", "exit").start();
+
+            mysql.getOutputStream().write(txtPassword.getText().getBytes());
+            mysql.getOutputStream().close();
 
             int exitCode = mysql.waitFor();
             if (exitCode != 0) {
