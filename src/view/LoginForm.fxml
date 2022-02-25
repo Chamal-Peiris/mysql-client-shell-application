@@ -7,6 +7,7 @@
 <?import javafx.scene.text.Font?>
 
 
+<?import javafx.scene.control.PasswordField?>
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.LoginFormController">
    <children>
       <Label layoutX="159.0" layoutY="14.0" text="Mysql Shell User Login">
@@ -37,7 +38,7 @@
       <TextField fx:id="txtHost" layoutX="273.0" layoutY="95.0" prefHeight="26.0" prefWidth="260.0" text="localhost" />
       <TextField fx:id="txtPort" layoutX="273.0" layoutY="139.0" prefHeight="26.0" prefWidth="260.0" text="3306" />
       <TextField fx:id="txtUsername" layoutX="273.0" layoutY="185.0" prefHeight="26.0" prefWidth="260.0" />
-      <TextField fx:id="txtPassword" layoutX="273.0" layoutY="231.0" prefHeight="26.0" prefWidth="260.0" />
+      <PasswordField fx:id="txtPassword" layoutX="273.0" layoutY="231.0" prefHeight="26.0" prefWidth="260.0" />
       <Button fx:id="btnConnect" layoutX="115.0" layoutY="316.0" mnemonicParsing="false" onAction="#btnConnect_OnAction" prefHeight="39.0" prefWidth="109.0" style="-fx-background-color: #05386B;" text="Connect" textFill="#fff8f8">
          <font>
             <Font name="Noto Serif CJK JP Bold" size="17.0" />
