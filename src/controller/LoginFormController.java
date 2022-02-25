@@ -84,13 +84,19 @@ public class LoginFormController {
                 alert.getDialogPane().setMinHeight(Region.USE_PREF_SIZE);
                 alert.show();
             } else {
-                AnchorPane root = FXMLLoader.load(this.getClass().getResource("/view/MainUI.fxml"));
+                FXMLLoader fxmlLoader = new FXMLLoader(this.getClass().getResource("/view/MainUI.fxml"));
+                AnchorPane root = fxmlLoader.load();
                 Scene shellScene = new Scene(root);
                 Stage stage = (Stage) txtUsername.getScene().getWindow();
                 stage.setScene(shellScene);
+                MainUIController controller = fxmlLoader.getController();
+                controller.initData(txtHost.getText(),
+                        txtPort.getText(),
+                        txtUsername.getText(),
+                        txtPassword.getText());
                 stage.centerOnScreen();
                 stage.setTitle("MySQL Client Shell");
-                Platform.runLater(()-> stage.sizeToScene());
+                Platform.runLater(() -> stage.sizeToScene());
             }
         } catch (IOException | InterruptedException e) {
             e.printStackTrace();
