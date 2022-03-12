@@ -4,7 +4,7 @@
 
 1. Clone the repository first  'git clone'
 
-``https://github.com/Chamal-Peiris/simple-java-app-runner.git``
+``https://github.com/Chamal-Peiris/mysql-client-shell-application.git``
 
 2. Once cloned, open the repository from any prefered IDE
 
